@@ -1,0 +1,42 @@
+{
+  "name": "empty_electron_ts_react_app",
+  "version": "0.0.1",
+  "description": "An empty project with TypeScript,React and Electron.",
+  "main": "./dist/application.js",
+  "scripts": {
+    "dev": "npm run build && electron .",
+    "build": "webpack --config webpack.config.js",
+    "watch": "webpack --config webpack.config.js --watch",
+    "publish": "webpack --env.Release --config webpack.config.js --progress",
+    "packWin": "SET CSC_LINK=key/key.pfx && SET CSC_KEY_PASSWORD=XXXXX && npm run publish && electron-builder --win",
+    "packMac": "npm run publish && electron-builder --mac"
+  },
+  "author": "Hope_Phenom",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^23.3.5",
+    "@types/node": "^10.11.6",
+    "@types/react": "^16.4.16",
+    "@types/react-dom": "^16.0.9",
+    "css-loader": "^1.0.0",
+    "electron": "^3.0.3",
+    "electron-builder": "^20.28.4",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "ts-loader": "^5.2.1",
+    "typescript": "^3.1.2",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.2"
+  },
+  "dependencies": {
+    "copy-webpack-plugin": "^4.5.2"
+  },
+  "build": {
+    "asar": true,
+    "files": [
+      "./dist",
+      "./src",
+      "package.json"
+    ]
+  }
+}
