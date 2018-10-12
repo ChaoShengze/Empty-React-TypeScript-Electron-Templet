@@ -32,6 +32,10 @@ module.exports = {
                         loader: 'css-loader'
                     }
                 ]
+            },
+            {
+                test: /\.(jpg|png|gif)$/,
+                loader: 'url-loader?limit=8192&name=images/[hash:8].[name].[ext]'
             }
         ]
     },
